@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <title>스파르타 피디아</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+                .body{
+            background-color: #333333;
+        }
+
+
+        .mytitle {
+            width: 100%;
+            height: 60px;
+
+            background-color: #333333;
+
+            color: white;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: left;
+        }
+
+        .mytitle > button:hover {
+            border: 2px solid white;
+        }
+
+        .logo{
+            width : 120px;
+            height : 30px;
+
+            margin : 10px auto 10px 0px;
+        }
+
+        .login{
+
+            font-size: medium ;
+            font-weight: bold;
+        }
+
+        .logojoin{
+          color: red;
+          font-size: medium;
+
+          margin : 40px auto 10px 0px;
+        }
+
+        .mypost {
+            background-color: #222222;
+
+            color: white;
+
+            width: 95%;
+            max-width: 300px;
+            height : 400px;
+            margin: 20px auto 0px auto;
+            padding: 20px;
+
+            display: none;
+        }
+
+        .mybtns {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+
+            margin: 20px 0px 0px auto;
+        }
+
+        .mybtns > button {
+            margin-right: 10px;
+        }
+
+        .form-control {
+            background-color: #383838;
+            color: white;
+        }
+
+        .form-control{
+            border-color: #4E4E4E;
+        }
+
+
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('#post-box').show()
+        })
+
+        function posting() {
+            $.ajax({
+                type: 'POST',
+                url: '/movie',
+                data: {sample_give: '데이터전송'},
+                success: function (response) {
+                    alert(response['msg'])
+                }
+            });
+        }
+
+    </script>
+</head>
+
+<body class="body">
+
+<div class="mytitle">
+    <a href="#"><img src ="logogray.png" class = "logo" onclick = "location.href = 'index3.html'"></a>
+</div>
+
+<div class="mypost" id="post-box">
+    <h4 class="logojoin">NetflixPedia</h4>
+    <h4 class="login">NetflixPedia 계정 만들기</h4>
+    <div class="mb-2">
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="아이디">
+    </div>
+    <div class="mb-4">
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="비밀번호">
+    </div>
+
+    <div class="mybtns">
+        <button type="button" class="btn text-white" style="background-color: #383838;" onclick = "location.href = 'index3.html'">취소</button>
+        <button type="button" class="btn btn-primary" onclick = "??">회원가입</button>
+    </div>
+</div>
